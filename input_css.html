@@ -1,0 +1,88 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>CSS Align Content Properties</title>
+</head>
+
+<style>
+
+
+*{
+  margin: 0;
+  padding: 0;
+box-sizing: border-box;
+font-family: none;
+}
+body{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+    align-items: center;
+    justify-content:center;
+    min-height: 100vh;
+    gap: 30px;
+    background-color:#545454 ;
+}
+
+.xyz{
+  position: relative;
+  width: 350px;
+
+}
+.xyz input{
+  position: relative;
+  padding: 20px;
+  border-radius: 5px;
+  width: 100%;
+  outline: 0;
+  font-size: 1.25rem;
+  background-color: transparent;
+  border: 1px black solid;
+  transition: 0.50s;
+}
+  .xyz span{
+    position: absolute;
+    left: 0%;
+    text-transform: uppercase;
+    padding: 20px;
+  transition: 0.50s;
+
+
+  }
+  .xyz input:valid~span,
+  .xyz input:focus~span{
+    padding: 0 20px;
+    transform: translateX(20px) translateY(-9px);
+    background-color: #545454;
+    border-left: 1px solid aqua;
+    border-right: 1px solid aqua;
+
+  }
+
+
+  .xyz input:valid,
+  .xyz input:focus{
+    border: 1px solid aqua;
+  }
+
+  .xyz:nth-child(1) input:valid~span,
+  .xyz:nth-child(1)  input:focus~span{
+    color: black;
+    background: aqua;
+
+  }
+
+</style>
+<body>
+    <div class="xyz">
+        <input type="text" required = 'required'>
+         <span>first name</span>
+      </div>
+
+
+        <div class="xyz">
+        <input type="text" required = 'required'>
+        <span>last name</span>
+        </div>
+</body>
+</html>

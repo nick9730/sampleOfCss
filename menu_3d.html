@@ -1,0 +1,103 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>CSS Align Content Properties</title>
+</head>
+
+<style>
+
+
+*{
+  margin: 0;
+  padding: 0;
+box-sizing: border-box;
+font-family:none;
+}
+
+body{
+  
+  display: flex;
+  flex-direction: column;
+    align-items: center;
+    justify-content:center;
+    min-height: 100vh;
+
+    background-color:#414952  ;
+}
+
+ul{
+
+  position: relative;
+  transform: skewY(-15deg);
+}
+
+ul li{
+  list-style: none;
+  padding: 10px;
+  background-color: #2E4053 ;
+  width: 200px;
+  position: relative;
+  z-index: var(--i);
+  transition: 0.5s;
+}
+ul li a {
+ text-decoration: solid;
+ text-transform: uppercase;
+ letter-spacing: 0.01rem;
+ color: wheat;
+
+}
+
+ul li::before{
+  content: '';
+  background-color:#2E4053  ;
+  position: absolute;
+  width: 41px;
+  left: -40px;
+  height: 100%;
+ transform-origin: right;
+ transform: skewY(45deg);
+ top: 0;
+ transition: 0.5s;
+
+}
+ul li::after{
+  content: '';
+  background-color:#2E4053  ;
+  position: absolute;
+  width: 100%;
+  height: 41px;
+  left: 0;
+  top: -40px;
+  transform-origin: bottom;
+  transform: skewX(45deg);
+  transition: 0.5s;
+ 
+}
+
+ul li:hover{
+  transform: translateX(40px);
+background-color: #17202A;
+}
+ul li:hover::after{
+  background-color: #17202A;
+}
+ul li:hover::before{
+  background-color: #17202A;
+}
+ul li:last-child::after{
+  box-shadow: -100px 100px 1px rgba(0, 0, 0, 0.25)}
+</style>
+<body>
+   <ul>
+    <li style='--i:7'><a href="#">Home</a></li>
+    <li style='--i:6'><a href="#">About</a></li>
+    <li style='--i:5'><a href="#">Absolute</a></li>
+    <li style='--i:4'><a href="#">Relatice</a></li>
+    <li style='--i:3'><a href="#">Trol</a></li>
+    <li style='--i:2'><a href="#">info</a></li>
+    <li style='--i:1'><a href="#">legere</a></li>
+
+   </ul>
+</body>
+</html>
